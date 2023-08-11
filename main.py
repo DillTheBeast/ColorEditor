@@ -10,17 +10,16 @@ def get_image_from_clipboard():
 
         # Check if the clipboard contains an image
         if isinstance(img, Image.Image):
-            # Display the image (for demonstration purposes)
-            img.show()
-            width, height = img.size()
+            width, height = img.size
 
             # If you want to process the image, you can do it here
             # Example: Print the top-left pixel's RGB value
-            r, g, b = img.getpixel((0, 0))
+            #r, g, b = img.getpixel((0, 0))
             for y in range(height):
                 for x in range(width):
                     img.putpixel((x,y), (255,255,255))
-            print(f"Top-left pixel RGB: ({r}, {g}, {b})")
+            #print(f"Top-left pixel RGB: ({r}, {g}, {b})")
+            img.show()
 
         else:
             messagebox.showerror("Error", "No image found in clipboard!")
