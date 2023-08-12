@@ -14,10 +14,12 @@ def get_image_from_clipboard():
 
             # If you want to process the image, you can do it here
             # Example: Print the top-left pixel's RGB value
-            #r, g, b = img.getpixel((0, 0))
             for y in range(height):
                 for x in range(width):
-                    img.putpixel((x,y), (255,255,255))
+                    r, g, b = img.getpixel((x, y))
+                    #img.putpixel((x,y), (255,255,255))
+                    if g > 200 and b > 200:
+                        img.putpixel((x, y), (0,0,0))
             #print(f"Top-left pixel RGB: ({r}, {g}, {b})")
             img.show()
 
