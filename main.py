@@ -18,8 +18,8 @@ def get_image_from_clipboard():
                 for x in range(width):
                     r, g, b = img.getpixel((x, y))
                     #img.putpixel((x,y), (255,255,255))
-                    if g > 200 and b > 200:
-                        img.putpixel((x, y), (0,0,0))
+                    if r == 0 and b == 0 and g == 0:
+                        img.putpixel((x, y), (255, 0, 0))
             #print(f"Top-left pixel RGB: ({r}, {g}, {b})")
             img.show()
 
